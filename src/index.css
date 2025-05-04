@@ -120,3 +120,42 @@
 .ar-controls {
   @apply absolute bottom-4 right-4 bg-black bg-opacity-70 backdrop-blur-sm rounded-lg p-2 flex gap-2;
 }
+
+@keyframes travel {
+  0% { left: 30%; opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { left: 85%; opacity: 0; }
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(90deg); }
+}
+
+.model-highlight {
+  animation: highlight 2s infinite;
+  filter: drop-shadow(0 0 12px rgba(236, 72, 153, 0.7));
+}
+
+@keyframes highlight {
+  0%, 100% { filter: drop-shadow(0 0 8px rgba(236, 72, 153, 0.7)); }
+  50% { filter: drop-shadow(0 0 16px rgba(236, 72, 153, 0.9)); }
+}
+
+.model-label {
+  @apply absolute bg-black/70 text-pink-400 text-xs px-2 py-0.5 rounded-full border border-pink-500/30;
+  z-index: 10;
+  transform: translateY(-50%);
+  white-space: nowrap;
+}
+
+.ar-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 30%, rgba(219, 39, 119, 0.05) 0%, rgba(10, 10, 20, 0.15) 100%);
+  z-index: 0;
+}
