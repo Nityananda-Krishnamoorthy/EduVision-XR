@@ -16,16 +16,16 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-ar-blue text-white shadow-md">
+    <nav className="bg-ar-black text-foreground shadow-md border-b border-ar-purple/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <div className="flex-shrink-0">
               <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 rounded-full bg-ar-teal flex items-center justify-center">
-                  <BrainCircuit className="h-5 w-5 text-white" />
+                <div className="w-8 h-8 rounded-full bg-ar-purple flex items-center justify-center">
+                  <BrainCircuit className="h-5 w-5 text-ar-black" />
                 </div>
-                <span className="text-lg font-bold">EduVisionAR</span>
+                <span className="text-lg font-bold text-ar-purple">SheR</span>
               </div>
             </div>
             <div className="hidden md:block">
@@ -34,7 +34,7 @@ const Navbar = () => {
                   <Button
                     key={link.name}
                     variant="ghost"
-                    className="text-white hover:bg-ar-teal/20"
+                    className="text-foreground hover:bg-ar-purple/20"
                     onClick={() => navigate(link.href)}
                   >
                     {link.icon}
@@ -47,9 +47,9 @@ const Navbar = () => {
           <div className="md:hidden">
             <Button variant="ghost" onClick={() => setIsMenuOpen(!isMenuOpen)}>
               {isMenuOpen ? (
-                <X className="h-6 w-6 text-white" />
+                <X className="h-6 w-6 text-foreground" />
               ) : (
-                <Menu className="h-6 w-6 text-white" />
+                <Menu className="h-6 w-6 text-foreground" />
               )}
             </Button>
           </div>
@@ -59,7 +59,7 @@ const Navbar = () => {
       {/* Mobile menu */}
       <div
         className={cn(
-          "md:hidden bg-ar-blue",
+          "md:hidden bg-ar-black border-t border-ar-purple/20",
           isMenuOpen ? "block" : "hidden"
         )}
       >
@@ -68,7 +68,7 @@ const Navbar = () => {
             <Button
               key={link.name}
               variant="ghost"
-              className="w-full justify-start text-white hover:bg-ar-teal/20"
+              className="w-full justify-start text-foreground hover:bg-ar-purple/20"
               onClick={() => {
                 navigate(link.href);
                 setIsMenuOpen(false);

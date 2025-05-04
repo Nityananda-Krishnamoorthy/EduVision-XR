@@ -17,12 +17,12 @@ const DashboardCard = ({
   return (
     <div 
       className={cn(
-        "bg-white rounded-lg shadow-md p-4 card-hover-effect",
+        "bg-card rounded-lg shadow-md p-4 card-hover-effect border border-ar-purple/20",
         fullHeight && "h-full",
         className
       )}
     >
-      <h3 className="text-lg font-medium text-ar-blue mb-3 border-b pb-2">{title}</h3>
+      <h3 className="text-lg font-medium text-ar-purple mb-3 border-b border-ar-purple/30 pb-2">{title}</h3>
       <div className={cn(fullHeight && "h-[calc(100%-2.5rem)]")}>
         {children}
       </div>

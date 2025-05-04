@@ -64,11 +64,11 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				ar: {
-					'blue': '#0A2463',
-					'teal': '#247BA0',
-					'light-teal': '#70C1B3',
-					'mint': '#B2DBBF',
-					'cream': '#F3FFBD',
+					'purple': '#9b87f5',
+					'dark-purple': '#7E69AB',
+					'light-purple': '#B39DDB',
+					'black': '#1A1F2C',
+					'dark-black': '#121419',
 				}
 			},
 			borderRadius: {
@@ -101,12 +101,17 @@ export default {
 					'0%, 100%': { opacity: '0.5', transform: 'scale(1)' },
 					'50%': { opacity: '1', transform: 'scale(1.05)' },
 				},
+				'rotate-model': {
+					'from': { transform: 'rotate3d(0, 1, 0, 0deg)' },
+					'to': { transform: 'rotate3d(0, 1, 0, 360deg)' },
+				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'rotate-gear': 'rotate-gear 10s linear infinite',
 				'pulse-neuron': 'pulse-neuron 3s ease-in-out infinite',
+				'rotate-model': 'rotate-model 20s linear infinite',
 			}
 		}
 	},

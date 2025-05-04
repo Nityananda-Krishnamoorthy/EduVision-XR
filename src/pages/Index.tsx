@@ -25,13 +25,13 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50">
+    <div className="min-h-screen flex flex-col bg-background">
       <Navbar />
       
       <main className="flex-grow px-4 py-6 md:px-6 lg:px-8 max-w-7xl mx-auto w-full">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-ar-blue mb-2">Augmented Reality in Education</h1>
-          <p className="text-gray-600 max-w-3xl">
+          <h1 className="text-3xl font-bold text-ar-purple mb-2">Augmented Reality in Education</h1>
+          <p className="text-foreground/80 max-w-3xl">
             Explore interactive 3D models for Mechanical Engineering and Brain Medical Science. 
             Enhance learning through immersive visualization and hands-on virtual experiences.
           </p>
@@ -74,25 +74,25 @@ const Index = () => {
           <div>
             <DashboardCard title="Educational Resources">
               <div className="space-y-3">
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-foreground/80">
                   Access supplementary materials to enhance your AR learning experience.
                 </p>
                 
                 <div className="space-y-2">
-                  <Button variant="outline" className="w-full justify-between" onClick={() => window.open('#', '_blank')}>
+                  <Button variant="outline" className="w-full justify-between border-ar-purple/30 hover:bg-ar-purple/20 text-foreground" onClick={() => window.open('#', '_blank')}>
                     <div className="flex items-center">
-                      <BookOpen className="h-4 w-4 mr-2" />
+                      <BookOpen className="h-4 w-4 mr-2 text-ar-purple" />
                       <span>{activeSubject === 'mechanical' ? 'Engine Design Manual' : 'Neuroanatomy Guide'}</span>
                     </div>
-                    <ArrowUpRight className="h-4 w-4" />
+                    <ArrowUpRight className="h-4 w-4 text-ar-purple" />
                   </Button>
                   
-                  <Button variant="outline" className="w-full justify-between" onClick={() => window.open('#', '_blank')}>
+                  <Button variant="outline" className="w-full justify-between border-ar-purple/30 hover:bg-ar-purple/20 text-foreground" onClick={() => window.open('#', '_blank')}>
                     <div className="flex items-center">
-                      <BookOpen className="h-4 w-4 mr-2" />
+                      <BookOpen className="h-4 w-4 mr-2 text-ar-purple" />
                       <span>{activeSubject === 'mechanical' ? 'Video Tutorials' : 'Brain Mapping Resources'}</span>
                     </div>
-                    <ArrowUpRight className="h-4 w-4" />
+                    <ArrowUpRight className="h-4 w-4 text-ar-purple" />
                   </Button>
                 </div>
               </div>
@@ -101,9 +101,9 @@ const Index = () => {
         </div>
       </main>
       
-      <footer className="bg-ar-blue text-white py-4">
+      <footer className="bg-ar-black text-ar-light-purple py-4 border-t border-ar-purple/20">
         <div className="max-w-7xl mx-auto px-4 text-center text-sm">
-          <p>© 2025 EduVisionAR - Augmented Reality for Educational Excellence</p>
+          <p>© 2025 SheR - Augmented Reality for Educational Excellence | Developed by Block-UP</p>
         </div>
       </footer>
     </div>

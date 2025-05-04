@@ -18,12 +18,12 @@ const SubjectSelector: React.FC<SubjectSelectorProps> = ({
       onValueChange={(value) => onSelectSubject(value as 'mechanical' | 'brain')}
       className="w-full"
     >
-      <TabsList className="grid grid-cols-2 w-full">
-        <TabsTrigger value="mechanical" className="flex items-center justify-center gap-2">
+      <TabsList className="grid grid-cols-2 w-full bg-ar-black border border-ar-purple/20">
+        <TabsTrigger value="mechanical" className="flex items-center justify-center gap-2 data-[state=active]:bg-ar-purple data-[state=active]:text-ar-black">
           <Cog className="h-4 w-4" />
           <span>Mechanical Engineering</span>
         </TabsTrigger>
-        <TabsTrigger value="brain" className="flex items-center justify-center gap-2">
+        <TabsTrigger value="brain" className="flex items-center justify-center gap-2 data-[state=active]:bg-ar-purple data-[state=active]:text-ar-black">
           <BrainCircuit className="h-4 w-4" />
           <span>Brain Medical Science</span>
         </TabsTrigger>
