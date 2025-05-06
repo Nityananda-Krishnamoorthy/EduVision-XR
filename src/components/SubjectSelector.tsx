@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Brain, Engine } from 'lucide-react';
+import { Brain, Cog } from 'lucide-react';
 
 interface SubjectSelectorProps {
   activeSubject: 'mechanical' | 'brain';
@@ -23,7 +23,7 @@ const SubjectSelector: React.FC<SubjectSelectorProps> = ({
           value="mechanical" 
           className="flex items-center justify-center gap-2 data-[state=active]:bg-pink-600 data-[state=active]:text-black"
         >
-          <Engine className="h-4 w-4" />
+          <Cog className="h-4 w-4" />
           <span>Mechanical Engineering</span>
           <span className="text-xs bg-pink-500/20 px-2 py-0.5 rounded-full hidden sm:inline-block">
             5 Models

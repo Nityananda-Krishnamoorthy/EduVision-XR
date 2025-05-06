@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Loader2, RotateCw, ZoomIn, ZoomOut, Brain, Engine, Pump, Cylinder, TestTube } from 'lucide-react';
+import { Loader2, RotateCw, ZoomIn, ZoomOut, Brain, Cog, Gauge, Cylinder as CylinderIcon, Flask } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
