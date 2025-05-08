@@ -64,11 +64,11 @@ const Index = () => {
           </div>
           
           {/* Stats Section */}
-          <div className="lg:col-span-2 h-64">
-            <DashboardCard title="Learning Analytics" fullHeight>
-              <Stats type={activeSubject} />
-            </DashboardCard>
-          </div>
+<div className="lg:col-span-2 h-96"> {/* Increased height from h-64 to h-96 */}
+  <DashboardCard title="Learning Analytics" fullHeight>
+    <Stats type={activeSubject} />
+  </DashboardCard>
+</div>
           
           {/* Resources Section */}
           <div>
