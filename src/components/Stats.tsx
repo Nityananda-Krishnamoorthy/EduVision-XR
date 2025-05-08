@@ -19,7 +19,7 @@ const Stats = ({ type }: StatsProps) => {
   ];
 
   const data = type === 'mechanical' ? mechanicalData : brainData;
-  const colors = ['#0A2463', '#247BA0', '#70C1B3'];
+  const colors = ['#FF6B6B', '#FFD93D', '#6BCB77'];
 
   return (
     <div className="h-full flex flex-col">
