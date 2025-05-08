@@ -24,27 +24,34 @@ const Stats = ({ type }: StatsProps) => {
   return (
     <div className="h-full flex flex-col">
       <h3 className="text-lg font-medium text-ar-blue mb-3">Learning Method Effectiveness</h3>
-      <div className="flex justify-center items-center h-[240px]">
-        <ResponsiveContainer width={300} height={240}>
-          <PieChart>
-            <Pie
-              data={data}
-              cx="50%"
-              cy="50%"
-              labelLine={false}
-              outerRadius={80}
-              fill="#8884d8"
-              dataKey="value"
-              label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
-            >
-              {data.map((entry, index) => (
-                <Cell key={`cell-${index}`} fill={colors[index % colors.length]} />
-              ))}
-            </Pie>
-            <Legend layout="horizontal" verticalAlign="bottom" align="center" />
-          </PieChart>
-        </ResponsiveContainer>
-      </div>
+      <div className="h-72 w-full flex flex-col items-center justify-center">
+  <ResponsiveContainer width="100%" height="100%">
+    <PieChart>
+      <Pie
+        data={data}
+        cx="50%"
+        cy="40%" // Push pie chart up slightly
+        outerRadius={70}
+        dataKey="value"
+        label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
+        labelLine={false}
+      >
+        {data.map((entry, index) => (
+          <Cell key={`cell-${index}`} fill={colors[index % colors.length]} />
+        ))}
+      </Pie>
+      <Legend
+        layout="horizontal"
+        verticalAlign="bottom"
+        align="center"
+        wrapperStyle={{
+          paddingTop: 10,
+          fontSize: '12px',
+        }}
+      />
+    </PieChart>
+  </ResponsiveContainer>
+</div>
       <div className="mt-2 text-center text-sm text-gray-400">
         Based on student performance data
       </div>
