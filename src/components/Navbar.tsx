@@ -25,7 +25,7 @@ const Navbar = () => {
                 <div className="w-8 h-8 rounded-full bg-ar-purple flex items-center justify-center">
                   <BrainCircuit className="h-5 w-5 text-ar-black" />
                 </div>
-                <span className="text-lg font-bold text-ar-purple">SheR</span>
+                <span className="text-lg font-bold text-ar-purple">EduVision XR</span>
               </div>
             </div>
             <div className="hidden md:block">
