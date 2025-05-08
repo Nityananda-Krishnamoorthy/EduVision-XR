@@ -103,7 +103,7 @@ const Index = () => {
       
       <footer className="bg-ar-black text-ar-light-purple py-4 border-t border-ar-purple/20">
         <div className="max-w-7xl mx-auto px-4 text-center text-sm">
-          <p>© 2025 SheR - Augmented Reality for Educational Excellence | Developed by Block-UP</p>
+          <p>© 2025 EduVision XR - Augmented Reality for Educational Excellence | Developed by Nityananda</p>
         </div>
       </footer>
     </div>
