@@ -24,31 +24,22 @@ const Stats = ({ type }: StatsProps) => {
   return (
     <div className="h-full flex flex-col">
       <h3 className="text-lg font-medium text-ar-blue mb-3">Learning Method Effectiveness</h3>
-      <div className="h-72 w-full flex flex-col items-center justify-center">
+      <div className="flex-1 w-full h-64"> {/* Limit chart height to avoid overflow */}
   <ResponsiveContainer width="100%" height="100%">
     <PieChart>
       <Pie
         data={data}
         cx="50%"
-        cy="40%" // Push pie chart up slightly
-        outerRadius={70}
+        cy="50%"
+        outerRadius={70} // reduced from 80 to 70 for better fit
         dataKey="value"
         label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
-        labelLine={false}
       >
         {data.map((entry, index) => (
           <Cell key={`cell-${index}`} fill={colors[index % colors.length]} />
         ))}
       </Pie>
-      <Legend
-        layout="horizontal"
-        verticalAlign="bottom"
-        align="center"
-        wrapperStyle={{
-          paddingTop: 10,
-          fontSize: '12px',
-        }}
-      />
+      <Legend verticalAlign="bottom" height={36} />
     </PieChart>
   </ResponsiveContainer>
 </div>
