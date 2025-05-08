@@ -24,8 +24,8 @@ const Stats = ({ type }: StatsProps) => {
   return (
     <div className="h-full flex flex-col">
       <h3 className="text-lg font-medium text-ar-blue mb-3">Learning Method Effectiveness</h3>
-      <div className="flex-1 w-full">
-        <ResponsiveContainer width="100%" height="100%">
+      <div className="flex justify-center items-center h-[240px]">
+        <ResponsiveContainer width={300} height={240}>
           <PieChart>
             <Pie
               data={data}
@@ -41,11 +41,11 @@ const Stats = ({ type }: StatsProps) => {
                 <Cell key={`cell-${index}`} fill={colors[index % colors.length]} />
               ))}
             </Pie>
-            <Legend />
+            <Legend layout="horizontal" verticalAlign="bottom" align="center" />
           </PieChart>
         </ResponsiveContainer>
       </div>
-      <div className="mt-2 text-center text-sm text-gray-500">
+      <div className="mt-2 text-center text-sm text-gray-400">
         Based on student performance data
       </div>
     </div>
