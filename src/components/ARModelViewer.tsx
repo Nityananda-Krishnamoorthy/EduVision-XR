@@ -375,89 +375,90 @@ const ARModelViewer = ({ type, className }: ARModelViewerProps) => {
 
   const BrainModelPlaceholder = () => {
     switch (currentModel) {
-      case 'brain':
-        return (
-          <div className="w-full h-full flex items-center justify-center">
-            <div 
-              className={`relative ${isRotating ? 'animate-rotate-model' : ''}`} 
-              style={{transform: `scale(${zoomLevel})`}}
-            >
-              {/* Enhanced brain visualization with updated colors */}
-              <div className="w-36 h-28 bg-gradient-to-br from-purple-800 to-pink-700 rounded-[60%] flex items-center justify-center animate-pulse-neuron relative">
-                {/* Main brain shape with smoother appearance */}
-                <div className="w-32 h-24 bg-gradient-to-br from-pink-500 to-purple-600 rounded-[60%] rotate-12 relative overflow-hidden">
-                  {/* Brain texture details */}
-                  <div className="absolute top-0 left-0 right-0 bottom-0 opacity-30">
-                    <div className="absolute top-1/4 left-1/4 w-1/2 h-1/3 border border-pink-300/40 rounded-full"></div>
-                    <div className="absolute bottom-1/4 right-1/4 w-1/3 h-1/4 border border-pink-300/40 rounded-full"></div>
-                    <div className="absolute top-1/3 right-1/5 w-1/4 h-1/4 border border-pink-300/40 rounded-full"></div>
-                  </div>
-{/* 3D View Button for Brain */}
-          <a
-            href="https://human.biodigital.com/widget/?be=2REV&background.colors=255,255,255,1,51,64,77,1&initial.hand-hint=true&ui-fullscreen=true&ui-center=false&ui-dissect=true&ui-zoom=true&ui-help=true&ui-tools-display=primary&ui-info=true&uaid=3bHQC"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-6 inline-block px-4 py-2 bg-pink-600 text-white rounded-lg shadow-md hover:bg-pink-700 transition"
-          >
-            View 3D Brain Model
-          </a>
-                </div>
-                
-                {/* Brain hemisphere division */}
-                <div className="absolute top-1/4 bottom-1/4 left-1/2 w-[1px] bg-pink-300/50 transform -rotate-12"></div>
-              </div>
-              
-              {/* Neural connections with enhanced visual effect */}
-              {[...Array(15)].map((_, i) => (
-                <div 
-                  key={i} 
-                  className="absolute w-2 h-2 bg-pink-500 rounded-full animate-pulse-neuron"
-                  style={{
-                    top: `${10 + Math.random() * 80}%`,
-                    left: `${10 + Math.random() * 80}%`,
-                    animationDelay: `${Math.random() * 2}s`,
-                    boxShadow: '0 0 8px rgba(236,72,153,0.7)'
-                  }}
-                >
-                  <div className="absolute w-6 h-0.5 bg-gradient-to-r from-pink-500 to-transparent origin-left rotate-45" style={{ transformOrigin: '0% 50%' }}></div>
-                  <div className="absolute w-4 h-0.5 bg-gradient-to-r from-pink-500 to-transparent origin-left -rotate-45" style={{ transformOrigin: '0% 50%' }}></div>
-                </div>
-              ))}
-              
-              {/* Neural pathways */}
-              <div className="absolute top-1/4 left-1/4 w-1/2 h-1/2 rounded-full">
-                {[...Array(5)].map((_, i) => (
-                  <div 
-                    key={i} 
-                    className="absolute w-full h-full border border-pink-400/20 rounded-full"
-                    style={{
-                      transform: `scale(${0.5 + i * 0.1})`,
-                      animationDelay: `${i * 0.5}s`
-                    }}
-                  ></div>
-                ))}
-              </div>
-              
-              {showDimensions && (
-                <>
-                  {/* Width dimension */}
-                  <div className="dimension-line bottom-0 left-0 right-0 border-t border-pink-400"></div>
-                  <div className="dimension-label bottom-3 left-1/2 transform -translate-x-1/2 bg-black text-pink-400">
-                    {modelDimensions.brain.width}{modelDimensions.brain.unit}
-                  </div>
-                  
-                  {/* Height dimension */}
-                  <div className="dimension-line top-0 bottom-0 right-0 border-r border-pink-400"></div>
-                  <div className="dimension-label top-1/2 right-3 transform -translate-y-1/2 rotate-90 bg-black text-pink-400">
-                    {modelDimensions.brain.height}{modelDimensions.brain.unit}
-                  </div>
-                </>
-              )}
+     case 'brain':
+  return (
+    <div className="w-full h-full flex flex-col items-center justify-center">
+      <div 
+        className={`relative ${isRotating ? 'animate-rotate-model' : ''}`} 
+        style={{ transform: `scale(${zoomLevel})` }}
+      >
+        {/* Enhanced brain visualization with updated colors */}
+        <div className="w-36 h-28 bg-gradient-to-br from-purple-800 to-pink-700 rounded-[60%] flex items-center justify-center animate-pulse-neuron relative">
+          
+          {/* Main brain shape with smoother appearance */}
+          <div className="w-32 h-24 bg-gradient-to-br from-pink-500 to-purple-600 rounded-[60%] rotate-12 relative overflow-hidden">
+            {/* Brain texture details */}
+            <div className="absolute top-0 left-0 right-0 bottom-0 opacity-30">
+              <div className="absolute top-1/4 left-1/4 w-1/2 h-1/3 border border-pink-300/40 rounded-full"></div>
+              <div className="absolute bottom-1/4 right-1/4 w-1/3 h-1/4 border border-pink-300/40 rounded-full"></div>
+              <div className="absolute top-1/3 right-1/5 w-1/4 h-1/4 border border-pink-300/40 rounded-full"></div>
             </div>
           </div>
+
+          {/* Brain hemisphere division */}
+          <div className="absolute top-1/4 bottom-1/4 left-1/2 w-[1px] bg-pink-300/50 transform -rotate-12"></div>
         </div>
+
+        {/* Neural connections */}
+        {[...Array(15)].map((_, i) => (
+          <div 
+            key={i}
+            className="absolute w-2 h-2 bg-pink-500 rounded-full animate-pulse-neuron"
+            style={{
+              top: `${10 + Math.random() * 80}%`,
+              left: `${10 + Math.random() * 80}%`,
+              animationDelay: `${Math.random() * 2}s`,
+              boxShadow: '0 0 8px rgba(236,72,153,0.7)'
+            }}
+          >
+            <div className="absolute w-6 h-0.5 bg-gradient-to-r from-pink-500 to-transparent origin-left rotate-45" style={{ transformOrigin: '0% 50%' }}></div>
+            <div className="absolute w-4 h-0.5 bg-gradient-to-r from-pink-500 to-transparent origin-left -rotate-45" style={{ transformOrigin: '0% 50%' }}></div>
           </div>
-        );
+        ))}
+
+        {/* Neural pathways */}
+        <div className="absolute top-1/4 left-1/4 w-1/2 h-1/2 rounded-full">
+          {[...Array(5)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute w-full h-full border border-pink-400/20 rounded-full"
+              style={{
+                transform: `scale(${0.5 + i * 0.1})`,
+                animationDelay: `${i * 0.5}s`
+              }}
+            ></div>
+          ))}
+        </div>
+
+        {/* Dimension display */}
+        {showDimensions && (
+          <>
+            {/* Width dimension */}
+            <div className="dimension-line bottom-0 left-0 right-0 border-t border-pink-400"></div>
+            <div className="dimension-label bottom-3 left-1/2 transform -translate-x-1/2 bg-black text-pink-400">
+              {modelDimensions.brain.width}{modelDimensions.brain.unit}
+            </div>
+
+            {/* Height dimension */}
+            <div className="dimension-line top-0 bottom-0 right-0 border-r border-pink-400"></div>
+            <div className="dimension-label top-1/2 right-3 transform -translate-y-1/2 rotate-90 bg-black text-pink-400">
+              {modelDimensions.brain.height}{modelDimensions.brain.unit}
+            </div>
+          </>
+        )}
+      </div>
+
+      {/* 3D View Button */}
+      <a
+        href="https://human.biodigital.com/widget/?be=2REV&background.colors=255,255,255,1,51,64,77,1&initial.hand-hint=true&ui-fullscreen=true&ui-center=false&ui-dissect=true&ui-zoom=true&ui-help=true&ui-tools-display=primary&ui-info=true&uaid=3bHQC"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-6 inline-block px-4 py-2 bg-pink-600 text-white rounded-lg shadow-md hover:bg-pink-700 transition"
+      >
+        View 3D Brain Model
+      </a>
+    </div>
+  );
       case 'cerebellum':
         return (
           <div className="w-full h-full flex items-center justify-center">
