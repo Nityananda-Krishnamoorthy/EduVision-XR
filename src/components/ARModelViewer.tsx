@@ -392,6 +392,15 @@ const ARModelViewer = ({ type, className }: ARModelViewerProps) => {
                     <div className="absolute bottom-1/4 right-1/4 w-1/3 h-1/4 border border-pink-300/40 rounded-full"></div>
                     <div className="absolute top-1/3 right-1/5 w-1/4 h-1/4 border border-pink-300/40 rounded-full"></div>
                   </div>
+{/* 3D View Button for Brain */}
+          <a
+            href="https://human.biodigital.com/widget/?be=2REV&background.colors=255,255,255,1,51,64,77,1&initial.hand-hint=true&ui-fullscreen=true&ui-center=false&ui-dissect=true&ui-zoom=true&ui-help=true&ui-tools-display=primary&ui-info=true&uaid=3bHQC"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 inline-block px-4 py-2 bg-pink-600 text-white rounded-lg shadow-md hover:bg-pink-700 transition"
+          >
+            View 3D Brain Model
+          </a>
                 </div>
                 
                 {/* Brain hemisphere division */}
@@ -446,16 +455,6 @@ const ARModelViewer = ({ type, className }: ARModelViewerProps) => {
               )}
             </div>
           </div>
-
-          {/* 3D View Button for Brain */}
-          <a
-            href="https://human.biodigital.com/widget/?be=2REV&background.colors=255,255,255,1,51,64,77,1&initial.hand-hint=true&ui-fullscreen=true&ui-center=false&ui-dissect=true&ui-zoom=true&ui-help=true&ui-tools-display=primary&ui-info=true&uaid=3bHQC"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-6 inline-block px-4 py-2 bg-pink-600 text-white rounded-lg shadow-md hover:bg-pink-700 transition"
-          >
-            View 3D Brain Model
-          </a>
         </div>
           </div>
         );
